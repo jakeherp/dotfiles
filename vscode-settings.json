@@ -1,0 +1,10 @@
+{
+    "workbench.colorTheme": "Dracula",
+    "editor.fontFamily": "'Operator Mono', Monaco, 'Courier New', monospace",
+    "editor.fontSize": 16,
+    "editor.formatOnSave": true,
+    "files.associations": {
+        "*.jsonp": "json"
+    },
+    "window.zoomLevel": 0
+}
