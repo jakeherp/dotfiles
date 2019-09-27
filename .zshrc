@@ -1,8 +1,9 @@
+cd ~/Development && clear
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
 # Path to your oh-my-zsh installation.
-export ZSH="/Users/jacob/.oh-my-zsh"
+export ZSH="/Users/jacobherper/.oh-my-zsh"
 
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,
@@ -62,14 +63,14 @@ ZSH_THEME="agnoster"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git npm node z)
+plugins=(aws composer copyfile docker extract git gitfast git-extras github node osx ssh-agent sudo vscode yarn npm z last-working-dir)
 
 source $ZSH/oh-my-zsh.sh
 
 # User configuration
 
 export PATH="/usr/local/bin:$PATH"
-
+export PATH="$PATH:./node_modules/.bin"
 # You may need to manually set your language environment
 # export LANG=en_US.UTF-8
 
@@ -77,14 +78,14 @@ export PATH="/usr/local/bin:$PATH"
 # if [[ -n $SSH_CONNECTION ]]; then
 #   export EDITOR='vim'
 # else
-#   export EDITOR='mvim'
+export EDITOR='code'
 # fi
 
 # Compilation flags
 # export ARCHFLAGS="-arch x86_64"
 
 # ssh
-# export SSH_KEY_PATH="~/.ssh/rsa_id"
+export SSH_KEY_PATH="~/.ssh/rsa_id"
 
 # Set personal aliases, overriding those provided by oh-my-zsh libs,
 # plugins, and themes. Aliases can be placed here, though oh-my-zsh
@@ -94,15 +95,22 @@ export PATH="/usr/local/bin:$PATH"
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
-alias composer="composer.phar" # Composer setup
+
+alias develop="yarn develop"
+alias dev="yarn develop"
+alias build="yarn build"
+alias serve="yarn serve"
+
 alias c="clear"
 alias ll="ls -la"
 alias nis="npm install --save "
 alias hs="history | grep"
 alias mkcd='foo(){ mkdir -p "$1"; cd "$1" }; foo '
 alias ip="curl http://ipecho.net/plain; echo"
+alias t="tree -L"
 
-alias g="git"
+alias push="git push origin "
+alias g="git add . && git push -u origin master"
 alias gac="git add . && git commit -a -m "
 alias gc="git commit -a -m "
 alias gs="git status"
@@ -116,8 +124,19 @@ alias gm="git merge"
 alias gmv="git mv"
 alias gp="git push"
 alias gpush="git push"
+alias gpom="git push -u origin master"
 alias gl="git pull"
 alias gpull="git pull"
 alias gr="git remote"
 alias grv="git remote -v"
 alias gra="git remote add"
+
+# tabtab source for serverless package
+# uninstall by removing these lines or running `tabtab uninstall serverless`
+[[ -f /Users/jacobherper/.config/yarn/global/node_modules/serverless/node_modules/tabtab/.completions/serverless.zsh ]] && . /Users/jacobherper/.config/yarn/global/node_modules/serverless/node_modules/tabtab/.completions/serverless.zsh
+# tabtab source for sls package
+# uninstall by removing these lines or running `tabtab uninstall sls`
+[[ -f /Users/jacobherper/.config/yarn/global/node_modules/serverless/node_modules/tabtab/.completions/sls.zsh ]] && . /Users/jacobherper/.config/yarn/global/node_modules/serverless/node_modules/tabtab/.completions/sls.zsh
+# tabtab source for slss package
+# uninstall by removing these lines or running `tabtab uninstall slss`
+[[ -f /Users/jacobherper/.config/yarn/global/node_modules/serverless/node_modules/tabtab/.completions/slss.zsh ]] && . /Users/jacobherper/.config/yarn/global/node_modules/serverless/node_modules/tabtab/.completions/slss.zsh
