@@ -17,7 +17,7 @@
     },
     "name": "auto-rename-tag",
     "publisher": "formulahendry",
-    "version": "0.0.15"
+    "version": "0.1.0"
   },
   {
     "metadata": {
@@ -27,7 +27,7 @@
     },
     "name": "better-comments",
     "publisher": "aaron-bond",
-    "version": "2.0.3"
+    "version": "2.0.5"
   },
   {
     "metadata": {
@@ -47,7 +47,7 @@
     },
     "name": "chat",
     "publisher": "karigari",
-    "version": "0.12.0"
+    "version": "0.22.1"
   },
   {
     "metadata": {
@@ -57,7 +57,17 @@
     },
     "name": "code-settings-sync",
     "publisher": "Shan",
-    "version": "3.2.7"
+    "version": "3.4.3"
+  },
+  {
+    "metadata": {
+      "id": "f6dbd813-b0a0-42c1-90ea-10dde9d925a7",
+      "publisherId": "streetsidesoftware.code-spell-checker",
+      "publisherDisplayName": "streetsidesoftware"
+    },
+    "name": "code-spell-checker",
+    "publisher": "streetsidesoftware",
+    "version": "1.7.18"
   },
   {
     "metadata": {
@@ -71,13 +81,23 @@
   },
   {
     "metadata": {
+      "id": "f60a60a6-95ba-42d4-b41c-3d24c1b89588",
+      "publisherId": "EditorConfig.EditorConfig",
+      "publisherDisplayName": "EditorConfig"
+    },
+    "name": "EditorConfig",
+    "publisher": "EditorConfig",
+    "version": "0.13.0"
+  },
+  {
+    "metadata": {
       "id": "19804510-b475-4dae-b0f7-6ca08fd1af0c",
       "publisherId": "dsznajder.es7-react-js-snippets",
       "publisherDisplayName": "dsznajder"
     },
     "name": "es7-react-js-snippets",
     "publisher": "dsznajder",
-    "version": "2.1.1"
+    "version": "2.4.3"
   },
   {
     "metadata": {
@@ -107,7 +127,7 @@
     },
     "name": "gitlens",
     "publisher": "eamodio",
-    "version": "9.5.1"
+    "version": "10.0.1"
   },
   {
     "metadata": {
@@ -117,7 +137,7 @@
     },
     "name": "html-slim-scss-css-class-completion",
     "publisher": "gencer",
-    "version": "1.5.13"
+    "version": "1.5.20"
   },
   {
     "metadata": {
@@ -127,7 +147,7 @@
     },
     "name": "LogFileHighlighter",
     "publisher": "emilast",
-    "version": "2.4.3"
+    "version": "2.6.0"
   },
   {
     "metadata": {
@@ -147,7 +167,7 @@
     },
     "name": "markdown-preview-enhanced",
     "publisher": "shd101wyy",
-    "version": "0.3.13"
+    "version": "0.4.3"
   },
   {
     "metadata": {
@@ -158,6 +178,16 @@
     "name": "next-js",
     "publisher": "foxundermoon",
     "version": "0.0.2"
+  },
+  {
+    "metadata": {
+      "id": "e58f546c-babc-455f-a265-ba40dbd140d4",
+      "publisherId": "sdras.night-owl",
+      "publisherDisplayName": "sdras"
+    },
+    "name": "night-owl",
+    "publisher": "sdras",
+    "version": "1.1.3"
   },
   {
     "metadata": {
@@ -187,7 +217,7 @@
     },
     "name": "php-intellisense",
     "publisher": "felixfbecker",
-    "version": "2.3.10"
+    "version": "2.3.13"
   },
   {
     "metadata": {
@@ -197,7 +227,7 @@
     },
     "name": "prettier-vscode",
     "publisher": "esbenp",
-    "version": "1.8.1"
+    "version": "2.3.0"
   },
   {
     "metadata": {
@@ -211,13 +241,23 @@
   },
   {
     "metadata": {
+      "id": "00518570-772b-4ccb-8b06-d056f3f556e0",
+      "publisherId": "Tyriar.sort-lines",
+      "publisherDisplayName": "Tyriar"
+    },
+    "name": "sort-lines",
+    "publisher": "Tyriar",
+    "version": "1.8.0"
+  },
+  {
+    "metadata": {
       "id": "f8b5562e-a2d9-49ab-9f91-e7da91998a92",
       "publisherId": "shinnn.stylelint",
       "publisherDisplayName": "shinnn"
     },
     "name": "stylelint",
     "publisher": "shinnn",
-    "version": "0.48.0"
+    "version": "0.51.0"
   },
   {
     "metadata": {
@@ -227,7 +267,7 @@
     },
     "name": "theme-dracula",
     "publisher": "dracula-theme",
-    "version": "2.17.0"
+    "version": "2.18.0"
   },
   {
     "metadata": {
@@ -247,7 +287,17 @@
     },
     "name": "vetur",
     "publisher": "octref",
-    "version": "0.17.0"
+    "version": "0.22.3"
+  },
+  {
+    "metadata": {
+      "id": "dffaf5a1-2219-434b-9d87-cb586fd59260",
+      "publisherId": "Equinusocio.vsc-material-theme",
+      "publisherDisplayName": "Equinusocio"
+    },
+    "name": "vsc-material-theme",
+    "publisher": "Equinusocio",
+    "version": "30.0.0"
   },
   {
     "metadata": {
@@ -257,7 +307,7 @@
     },
     "name": "vscode-apollo",
     "publisher": "apollographql",
-    "version": "1.5.2"
+    "version": "1.10.0"
   },
   {
     "metadata": {
@@ -267,7 +317,7 @@
     },
     "name": "vscode-eslint",
     "publisher": "dbaeumer",
-    "version": "1.8.2"
+    "version": "1.9.1"
   },
   {
     "metadata": {
@@ -287,7 +337,7 @@
     },
     "name": "vscode-graphql",
     "publisher": "Prisma",
-    "version": "0.1.7"
+    "version": "0.2.2"
   },
   {
     "metadata": {
@@ -297,7 +347,7 @@
     },
     "name": "vscode-gutter-preview",
     "publisher": "kisstkondoros",
-    "version": "0.18.0"
+    "version": "0.22.3"
   },
   {
     "metadata": {
@@ -317,7 +367,27 @@
     },
     "name": "vscode-npm-script",
     "publisher": "eg2",
-    "version": "0.3.5"
+    "version": "0.3.9"
+  },
+  {
+    "metadata": {
+      "id": "5a7017bf-c571-4d77-b902-6e56b16f539a",
+      "publisherId": "johnpapa.vscode-peacock",
+      "publisherDisplayName": "johnpapa"
+    },
+    "name": "vscode-peacock",
+    "publisher": "johnpapa",
+    "version": "3.1.5"
+  },
+  {
+    "metadata": {
+      "id": "06cc3e44-aedb-41b8-a4ea-29ebf3c491fd",
+      "publisherId": "jpoissonnier.vscode-styled-components",
+      "publisherDisplayName": "jpoissonnier"
+    },
+    "name": "vscode-styled-components",
+    "publisher": "jpoissonnier",
+    "version": "0.0.26"
   },
   {
     "metadata": {
@@ -327,7 +397,7 @@
     },
     "name": "vscode-styled-jsx",
     "publisher": "blanu",
-    "version": "1.0.0"
+    "version": "1.5.0"
   },
   {
     "metadata": {
@@ -337,7 +407,7 @@
     },
     "name": "vscode-tailwindcss",
     "publisher": "bradlc",
-    "version": "0.1.16"
+    "version": "0.2.0"
   },
   {
     "metadata": {
@@ -347,7 +417,7 @@
     },
     "name": "vscode-versionlens",
     "publisher": "pflannery",
-    "version": "0.22.0"
+    "version": "0.24.0"
   },
   {
     "metadata": {
@@ -357,7 +427,7 @@
     },
     "name": "vsliveshare",
     "publisher": "ms-vsliveshare",
-    "version": "0.3.1326"
+    "version": "1.0.869"
   },
   {
     "metadata": {
@@ -367,7 +437,7 @@
     },
     "name": "vsliveshare-audio",
     "publisher": "ms-vsliveshare",
-    "version": "0.1.48"
+    "version": "0.1.66"
   },
   {
     "metadata": {
@@ -377,6 +447,6 @@
     },
     "name": "vsliveshare-pack",
     "publisher": "ms-vsliveshare",
-    "version": "0.2.10"
+    "version": "0.3.3"
   }
 ]
