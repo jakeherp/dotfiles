@@ -1,97 +1,146 @@
 {
-	"workbench.colorTheme": "Night Owl",
-	"editor.fontFamily": "'Operator Mono', Monaco, 'Courier New', monospace",
-	"files.associations": {
-		"*.jsonp": "json"
-	},
-	"window.zoomLevel": 1,
-	"sync.gist": "9dea126eceb4bd707e41acc53b66cb35",
-	"eslint.alwaysShowStatus": true,
-	"eslint.packageManager": "yarn",
-	"editor.formatOnSave": true,
-	"editor.formatOnPaste": true,
-	"prettier.trailingComma": "all",
-	"prettier.semi": false,
-	"prettier.tabWidth": 4,
-	"prettier.disableLanguages": ["html"],
-	"prettier.useTabs": true,
-	"terminal.integrated.fontFamily": "'Fira Mono for Powerline'",
-	"terminal.integrated.fontSize": 14,
-	"workbench.fontAliasing": "antialiased",
-	"workbench.tree.indent": 12,
-	"window.openFilesInNewWindow": "on",
-	"terminal.external.osxExec": "Hyper.app",
-	"terminal.integrated.cursorStyle": "line",
-	"terminal.integrated.cursorBlinking": true,
-	"terminal.integrated.fontWeight": "500",
-	"peacock.favoriteColors": [
-		{
-			"name": "Angular Red",
-			"value": "#b52e31"
-		},
-		{
-			"name": "Auth0 Orange",
-			"value": "#eb5424"
-		},
-		{
-			"name": "Azure Blue",
-			"value": "#007fff"
-		},
-		{
-			"name": "C# Purple",
-			"value": "#68217A"
-		},
-		{
-			"name": "Gatsby Purple",
-			"value": "#639"
-		},
-		{
-			"name": "Go Cyan",
-			"value": "#5dc9e2"
-		},
-		{
-			"name": "Java Blue-Gray",
-			"value": "#557c9b"
-		},
-		{
-			"name": "JavaScript Yellow",
-			"value": "#f9e64f"
-		},
-		{
-			"name": "Mandalorian Blue",
-			"value": "#1857a4"
-		},
-		{
-			"name": "Node Green",
-			"value": "#215732"
-		},
-		{
-			"name": "React Blue",
-			"value": "#00b3e6"
-		},
-		{
-			"name": "Something Different",
-			"value": "#832561"
-		},
-		{
-			"name": "Vue Green",
-			"value": "#42b883"
-		}
-	],
-	"git.autofetch": true,
-	"editor.fontSize": 14,
-	"editor.renderWhitespace": "none",
-	"javascript.preferences.quoteStyle": "single",
-	"cSpell.userWords": [
-		"Herper",
-		"INFOGRAPHIC",
-		"Infographics",
-		"Modernizr",
-		"Phonebook",
-		"contentful",
-		"netlify",
-		"roundtable",
-		"standfirst",
-		"tiempos"
-	]
+  "cSpell.userWords": [
+    "Figma",
+    "Herper",
+    "INFOGRAPHIC",
+    "Infographics",
+    "Jira",
+    "Modernizr",
+    "Mstack",
+    "Permutive",
+    "Phonebook",
+    "Photoshop",
+    "Prefetch",
+    "Zeplin",
+    "contentful",
+    "dianomi",
+    "instana",
+    "laquo",
+    "linkedin",
+    "netlify",
+    "pageview",
+    "roundtable",
+    "softskill",
+    "sourcepoint",
+    "standfirst",
+    "testid",
+    "theming",
+    "tiempos"
+  ],
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": true
+  },
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "editor.formatOnSave": true,
+  "editor.fontFamily": "'Operator Mono', Monaco, 'Courier New', monospace",
+  "editor.fontSize": 14,
+  "editor.formatOnPaste": true,
+  "editor.renderWhitespace": "none",
+  "editor.tabSize": 2,
+  "eslint.alwaysShowStatus": true,
+  "eslint.lintTask.enable": true,
+  "eslint.packageManager": "yarn",
+  "files.associations": {
+    "*.jsonp": "json"
+  },
+  "git.autofetch": true,
+  "gitlens.defaultDateFormat": "Do MMMM YYYY - HH:mm",
+  "gitlens.defaultDateShortFormat": "DD/MM/YYYY",
+  "gitlens.views.compare.location": "gitlens",
+  "gitlens.views.fileHistory.location": "gitlens",
+  "gitlens.views.lineHistory.location": "gitlens",
+  "gitlens.views.repositories.location": "gitlens",
+  "gitlens.views.search.location": "gitlens",
+  "javascript.preferences.quoteStyle": "single",
+  "peacock.favoriteColors": [
+    {
+      "name": "Angular Red",
+      "value": "#b52e31"
+    },
+    {
+      "name": "Auth0 Orange",
+      "value": "#eb5424"
+    },
+    {
+      "name": "Azure Blue",
+      "value": "#007fff"
+    },
+    {
+      "name": "C# Purple",
+      "value": "#68217A"
+    },
+    {
+      "name": "Gatsby Purple",
+      "value": "#639"
+    },
+    {
+      "name": "Go Cyan",
+      "value": "#5dc9e2"
+    },
+    {
+      "name": "Java Blue-Gray",
+      "value": "#557c9b"
+    },
+    {
+      "name": "JavaScript Yellow",
+      "value": "#f9e64f"
+    },
+    {
+      "name": "Mandalorian Blue",
+      "value": "#1857a4"
+    },
+    {
+      "name": "Node Green",
+      "value": "#215732"
+    },
+    {
+      "name": "React Blue",
+      "value": "#00b3e6"
+    },
+    {
+      "name": "Something Different",
+      "value": "#832561"
+    },
+    {
+      "name": "Vue Green",
+      "value": "#42b883"
+    }
+  ],
+  "sync.gist": "9dea126eceb4bd707e41acc53b66cb35",
+  "terminal.external.osxExec": "iTerm.app",
+  "terminal.integrated.cursorBlinking": true,
+  "terminal.integrated.cursorStyle": "line",
+  "terminal.integrated.fontFamily": "'Fira Mono for Powerline'",
+  "terminal.integrated.fontSize": 14,
+  "terminal.integrated.fontWeight": "500",
+  "todo-tree.highlights.enabled": true,
+  "window.openFilesInNewWindow": "on",
+  "window.zoomLevel": 0,
+  "workbench.colorTheme": "Night Owl",
+  "workbench.fontAliasing": "antialiased",
+  "workbench.tree.indent": 12,
+  "todo-tree.tree.showScanModeButton": false,
+  "jest.debugCodeLens.showWhenTestStateIn": ["fail", "unknown"],
+  "typeAcquisition": {
+    "include": ["jest"]
+  },
+  "workbench.startupEditor": "newUntitledFile",
+  "workbench.iconTheme": "Monokai Pro (Filter Octagon) Icons",
+  "tabnine.experimentalAutoImports": true,
+  "vsicons.dontShowNewVersionMessage": true,
+  "css.validate": false,
+  "less.validate": false,
+  "scss.validate": false,
+  "prettier.disableLanguages": ["json"],
+  "terminal.integrated.tabs.enabled": true,
+  "[dart]": {
+    "editor.formatOnSave": true,
+    "editor.formatOnType": true,
+    "editor.rulers": [80],
+    "editor.selectionHighlight": false,
+    "editor.suggest.snippetsPreventQuickSuggestions": false,
+    "editor.suggestSelection": "first",
+    "editor.tabCompletion": "onlySnippets",
+    "editor.wordBasedSuggestions": false
+  }
 }

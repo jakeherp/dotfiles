@@ -7,7 +7,7 @@
     },
     "name": "auto-close-tag",
     "publisher": "formulahendry",
-    "version": "0.5.6"
+    "version": "0.5.8"
   },
   {
     "metadata": {
@@ -17,7 +17,7 @@
     },
     "name": "auto-rename-tag",
     "publisher": "formulahendry",
-    "version": "0.1.0"
+    "version": "0.1.4"
   },
   {
     "metadata": {
@@ -27,7 +27,17 @@
     },
     "name": "better-comments",
     "publisher": "aaron-bond",
-    "version": "2.0.5"
+    "version": "2.1.0"
+  },
+  {
+    "metadata": {
+      "id": "464f4ac7-af65-4aa9-9907-4ba7fa419085",
+      "publisherId": "bungcip.better-toml",
+      "publisherDisplayName": "bungcip"
+    },
+    "name": "better-toml",
+    "publisher": "bungcip",
+    "version": "0.3.2"
   },
   {
     "metadata": {
@@ -38,16 +48,6 @@
     "name": "bracket-pair-colorizer",
     "publisher": "CoenraadS",
     "version": "1.0.61"
-  },
-  {
-    "metadata": {
-      "id": "39757d2a-1a37-40b9-b8b8-aa7ebd6e0cf9",
-      "publisherId": "karigari.chat",
-      "publisherDisplayName": "karigari"
-    },
-    "name": "chat",
-    "publisher": "karigari",
-    "version": "0.22.1"
   },
   {
     "metadata": {
@@ -67,7 +67,17 @@
     },
     "name": "code-spell-checker",
     "publisher": "streetsidesoftware",
-    "version": "1.7.18"
+    "version": "1.9.0"
+  },
+  {
+    "metadata": {
+      "id": "1ec62ca5-d7f9-4ddb-a882-e8d018c0aefd",
+      "publisherId": "msjsdiag.debugger-for-chrome",
+      "publisherDisplayName": "msjsdiag"
+    },
+    "name": "debugger-for-chrome",
+    "publisher": "msjsdiag",
+    "version": "4.12.9"
   },
   {
     "metadata": {
@@ -87,7 +97,17 @@
     },
     "name": "EditorConfig",
     "publisher": "EditorConfig",
-    "version": "0.13.0"
+    "version": "0.15.1"
+  },
+  {
+    "metadata": {
+      "id": "9d8c32ab-354c-4daf-a9bf-20b633734435",
+      "publisherId": "usernamehw.errorlens",
+      "publisherDisplayName": "usernamehw"
+    },
+    "name": "errorlens",
+    "publisher": "usernamehw",
+    "version": "3.2.0"
   },
   {
     "metadata": {
@@ -97,7 +117,7 @@
     },
     "name": "es7-react-js-snippets",
     "publisher": "dsznajder",
-    "version": "2.4.3"
+    "version": "2.8.2"
   },
   {
     "metadata": {
@@ -117,7 +137,7 @@
     },
     "name": "githistory",
     "publisher": "donjayamanne",
-    "version": "0.4.6"
+    "version": "0.6.9"
   },
   {
     "metadata": {
@@ -127,7 +147,7 @@
     },
     "name": "gitlens",
     "publisher": "eamodio",
-    "version": "10.0.1"
+    "version": "10.2.2"
   },
   {
     "metadata": {
@@ -137,7 +157,7 @@
     },
     "name": "html-slim-scss-css-class-completion",
     "publisher": "gencer",
-    "version": "1.5.20"
+    "version": "1.7.5"
   },
   {
     "metadata": {
@@ -147,7 +167,7 @@
     },
     "name": "LogFileHighlighter",
     "publisher": "emilast",
-    "version": "2.6.0"
+    "version": "2.9.0"
   },
   {
     "metadata": {
@@ -167,7 +187,17 @@
     },
     "name": "markdown-preview-enhanced",
     "publisher": "shd101wyy",
-    "version": "0.4.3"
+    "version": "0.5.13"
+  },
+  {
+    "metadata": {
+      "id": "ce071f60-714c-4351-854a-2a1d33f1e357",
+      "publisherId": "felipe.nasc-touchbar",
+      "publisherDisplayName": "felipe"
+    },
+    "name": "nasc-touchbar",
+    "publisher": "felipe",
+    "version": "1.12.0"
   },
   {
     "metadata": {
@@ -207,7 +237,7 @@
     },
     "name": "path-intellisense",
     "publisher": "christian-kohler",
-    "version": "1.4.2"
+    "version": "2.2.1"
   },
   {
     "metadata": {
@@ -217,7 +247,7 @@
     },
     "name": "php-intellisense",
     "publisher": "felixfbecker",
-    "version": "2.3.13"
+    "version": "2.3.14"
   },
   {
     "metadata": {
@@ -227,17 +257,47 @@
     },
     "name": "prettier-vscode",
     "publisher": "esbenp",
-    "version": "2.3.0"
+    "version": "5.1.3"
   },
   {
     "metadata": {
-      "id": "e52bce95-a629-455f-8626-e7301b9e372a",
-      "publisherId": "robinbentley.sass-indented",
-      "publisherDisplayName": "robinbentley"
+      "id": "f1f59ae4-9318-4f3c-a9b5-81b2eaa5f8a5",
+      "publisherId": "ms-python.python",
+      "publisherDisplayName": "ms-python"
     },
-    "name": "sass-indented",
-    "publisher": "robinbentley",
-    "version": "1.5.1"
+    "name": "python",
+    "publisher": "ms-python",
+    "version": "2020.8.101144"
+  },
+  {
+    "metadata": {
+      "id": "aae0701b-111f-49c1-9000-abd37a442f28",
+      "publisherId": "WallabyJs.quokka-vscode",
+      "publisherDisplayName": "WallabyJs"
+    },
+    "name": "quokka-vscode",
+    "publisher": "WallabyJs",
+    "version": "1.0.312"
+  },
+  {
+    "metadata": {
+      "id": "ee108066-df8b-43ae-9a83-e6c11400a759",
+      "publisherId": "jasonnutter.search-node-modules",
+      "publisherDisplayName": "jasonnutter"
+    },
+    "name": "search-node-modules",
+    "publisher": "jasonnutter",
+    "version": "1.3.0"
+  },
+  {
+    "metadata": {
+      "id": "b80129ef-d190-4ffd-80bf-7ebd643d53d1",
+      "publisherId": "asvetliakov.snapshot-tools",
+      "publisherDisplayName": "asvetliakov"
+    },
+    "name": "snapshot-tools",
+    "publisher": "asvetliakov",
+    "version": "0.4.0"
   },
   {
     "metadata": {
@@ -247,17 +307,7 @@
     },
     "name": "sort-lines",
     "publisher": "Tyriar",
-    "version": "1.8.0"
-  },
-  {
-    "metadata": {
-      "id": "f8b5562e-a2d9-49ab-9f91-e7da91998a92",
-      "publisherId": "shinnn.stylelint",
-      "publisherDisplayName": "shinnn"
-    },
-    "name": "stylelint",
-    "publisher": "shinnn",
-    "version": "0.51.0"
+    "version": "1.9.0"
   },
   {
     "metadata": {
@@ -267,7 +317,17 @@
     },
     "name": "theme-dracula",
     "publisher": "dracula-theme",
-    "version": "2.18.0"
+    "version": "2.22.1"
+  },
+  {
+    "metadata": {
+      "id": "261cac81-cd7b-4555-bb41-0c2d2bcd3e70",
+      "publisherId": "Gruntfuggly.todo-tree",
+      "publisherDisplayName": "Gruntfuggly"
+    },
+    "name": "todo-tree",
+    "publisher": "Gruntfuggly",
+    "version": "0.0.178"
   },
   {
     "metadata": {
@@ -287,7 +347,17 @@
     },
     "name": "vetur",
     "publisher": "octref",
-    "version": "0.22.3"
+    "version": "0.26.1"
+  },
+  {
+    "metadata": {
+      "id": "484d897a-6711-403c-ab54-a96f12be5833",
+      "publisherId": "Equinusocio.vsc-community-material-theme",
+      "publisherDisplayName": "Equinusocio"
+    },
+    "name": "vsc-community-material-theme",
+    "publisher": "Equinusocio",
+    "version": "1.4.2"
   },
   {
     "metadata": {
@@ -297,7 +367,17 @@
     },
     "name": "vsc-material-theme",
     "publisher": "Equinusocio",
-    "version": "30.0.0"
+    "version": "32.8.0"
+  },
+  {
+    "metadata": {
+      "id": "8c609a4f-268a-41fb-8fe6-b6fcd95e8113",
+      "publisherId": "equinusocio.vsc-material-theme-icons",
+      "publisherDisplayName": "equinusocio"
+    },
+    "name": "vsc-material-theme-icons",
+    "publisher": "equinusocio",
+    "version": "1.2.0"
   },
   {
     "metadata": {
@@ -307,7 +387,27 @@
     },
     "name": "vscode-apollo",
     "publisher": "apollographql",
-    "version": "1.10.0"
+    "version": "1.16.7"
+  },
+  {
+    "metadata": {
+      "id": "cba79045-6f59-4f86-8c80-af78d566d8cf",
+      "publisherId": "deerawan.vscode-dash",
+      "publisherDisplayName": "deerawan"
+    },
+    "name": "vscode-dash",
+    "publisher": "deerawan",
+    "version": "2.4.0"
+  },
+  {
+    "metadata": {
+      "id": "0479fc1c-3d67-49f9-b087-fb9069afe48f",
+      "publisherId": "ms-azuretools.vscode-docker",
+      "publisherDisplayName": "ms-azuretools"
+    },
+    "name": "vscode-docker",
+    "publisher": "ms-azuretools",
+    "version": "1.4.1"
   },
   {
     "metadata": {
@@ -317,7 +417,7 @@
     },
     "name": "vscode-eslint",
     "publisher": "dbaeumer",
-    "version": "1.9.1"
+    "version": "2.1.8"
   },
   {
     "metadata": {
@@ -337,7 +437,7 @@
     },
     "name": "vscode-graphql",
     "publisher": "Prisma",
-    "version": "0.2.2"
+    "version": "0.2.35"
   },
   {
     "metadata": {
@@ -347,7 +447,17 @@
     },
     "name": "vscode-gutter-preview",
     "publisher": "kisstkondoros",
-    "version": "0.22.3"
+    "version": "0.26.2"
+  },
+  {
+    "metadata": {
+      "id": "9ccc1dd7-7ec4-4a46-bd4f-7d7b8b9d322a",
+      "publisherId": "vscode-icons-team.vscode-icons",
+      "publisherDisplayName": "vscode-icons-team"
+    },
+    "name": "vscode-icons",
+    "publisher": "vscode-icons-team",
+    "version": "10.2.0"
   },
   {
     "metadata": {
@@ -367,7 +477,7 @@
     },
     "name": "vscode-npm-script",
     "publisher": "eg2",
-    "version": "0.3.9"
+    "version": "0.3.13"
   },
   {
     "metadata": {
@@ -377,7 +487,17 @@
     },
     "name": "vscode-peacock",
     "publisher": "johnpapa",
-    "version": "3.1.5"
+    "version": "3.8.0"
+  },
+  {
+    "metadata": {
+      "id": "69ddd764-339a-4ecc-97c1-9c4ece58e36d",
+      "publisherId": "GitHub.vscode-pull-request-github",
+      "publisherDisplayName": "GitHub"
+    },
+    "name": "vscode-pull-request-github",
+    "publisher": "GitHub",
+    "version": "0.18.0"
   },
   {
     "metadata": {
@@ -387,7 +507,7 @@
     },
     "name": "vscode-styled-components",
     "publisher": "jpoissonnier",
-    "version": "0.0.26"
+    "version": "0.0.29"
   },
   {
     "metadata": {
@@ -397,7 +517,7 @@
     },
     "name": "vscode-styled-jsx",
     "publisher": "blanu",
-    "version": "1.5.0"
+    "version": "2.0.0"
   },
   {
     "metadata": {
@@ -407,7 +527,7 @@
     },
     "name": "vscode-tailwindcss",
     "publisher": "bradlc",
-    "version": "0.2.0"
+    "version": "0.4.1"
   },
   {
     "metadata": {
@@ -417,7 +537,17 @@
     },
     "name": "vscode-versionlens",
     "publisher": "pflannery",
-    "version": "0.24.0"
+    "version": "1.0.8"
+  },
+  {
+    "metadata": {
+      "id": "f2fd462f-f1bd-4c62-b54f-59a4e5ffc6a3",
+      "publisherId": "WakaTime.vscode-wakatime",
+      "publisherDisplayName": "WakaTime"
+    },
+    "name": "vscode-wakatime",
+    "publisher": "WakaTime",
+    "version": "4.0.0"
   },
   {
     "metadata": {
@@ -427,7 +557,7 @@
     },
     "name": "vsliveshare",
     "publisher": "ms-vsliveshare",
-    "version": "1.0.869"
+    "version": "1.0.2619"
   },
   {
     "metadata": {
@@ -437,7 +567,7 @@
     },
     "name": "vsliveshare-audio",
     "publisher": "ms-vsliveshare",
-    "version": "0.1.66"
+    "version": "0.1.85"
   },
   {
     "metadata": {
@@ -447,6 +577,6 @@
     },
     "name": "vsliveshare-pack",
     "publisher": "ms-vsliveshare",
-    "version": "0.3.3"
+    "version": "0.4.0"
   }
 ]

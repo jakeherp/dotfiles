@@ -1,4 +1,6 @@
-cd ~/Development && clear
+export PATH="/Users/jacobherper/.deno/bin:$PATH"
+export PATH="/Users/jacobherper/flutter/bin:$PATH"
+
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
@@ -63,7 +65,7 @@ ZSH_THEME="agnoster"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(aws composer copyfile docker extract git gitfast git-extras github node osx ssh-agent sudo vscode yarn npm z last-working-dir)
+plugins=(extract git gitfast git-extras github k node sudo vscode yarn npm z last-working-dir zsh-autosuggestions deno)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -96,6 +98,9 @@ export SSH_KEY_PATH="~/.ssh/rsa_id"
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
+alias python=/usr/local/bin/python3
+alias pip=/usr/local/bin/pip3
+
 alias develop="yarn develop"
 alias dev="yarn develop"
 alias build="yarn build"
@@ -108,6 +113,7 @@ alias hs="history | grep"
 alias mkcd='foo(){ mkdir -p "$1"; cd "$1" }; foo '
 alias ip="curl http://ipecho.net/plain; echo"
 alias t="tree -L"
+alias cleanup="clear && rm -rf ~/.config/yarn/link/@dennisdigital && printf \"📦 Yarn link cleared\n\n\" && rm -rf node_modules && printf \"🎯 node_modules cleared\n\n\" && rm -rf assets && printf \"🌄 assets cleared\n\n\" && yarn install && printf \"\n\n✅ Cleanup complete\n\""
 
 alias push="git push origin "
 alias g="git add . && git push -u origin master"
@@ -131,6 +137,10 @@ alias gr="git remote"
 alias grv="git remote -v"
 alias gra="git remote add"
 
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
 # tabtab source for serverless package
 # uninstall by removing these lines or running `tabtab uninstall serverless`
 [[ -f /Users/jacobherper/.config/yarn/global/node_modules/serverless/node_modules/tabtab/.completions/serverless.zsh ]] && . /Users/jacobherper/.config/yarn/global/node_modules/serverless/node_modules/tabtab/.completions/serverless.zsh
@@ -140,3 +150,10 @@ alias gra="git remote add"
 # tabtab source for slss package
 # uninstall by removing these lines or running `tabtab uninstall slss`
 [[ -f /Users/jacobherper/.config/yarn/global/node_modules/serverless/node_modules/tabtab/.completions/slss.zsh ]] && . /Users/jacobherper/.config/yarn/global/node_modules/serverless/node_modules/tabtab/.completions/slss.zsh
+
+# added by travis gem
+[ ! -s /Users/jacobherper/.travis/travis.sh ] || source /Users/jacobherper/.travis/travis.sh
+
+fpath=(~/.zsh $fpath)
+autoload -Uz compinit
+compinit -u
