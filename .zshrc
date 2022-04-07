@@ -1,8 +1,84 @@
+export GITHUB_TOKEN="d895a61aff95996a1a0a87077709dda6c044e249"
 export PATH="/Users/jacobherper/.deno/bin:$PATH"
 export PATH="/Users/jacobherper/flutter/bin:$PATH"
 
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
+
+# User configuration
+export PATH="/usr/local/bin:$PATH"
+export PATH="$PATH:./node_modules/.bin"
+export START="/Users/jacobherper/Development"
+
+if [[ $PWD == $HOME ]]; then
+    cd $START
+fi
+
+# You may need to manually set your language environment
+# export LANG=en_US.UTF-8
+
+# Preferred editor for local and remote sessions
+# if [[ -n $SSH_CONNECTION ]]; then
+#   export EDITOR='vim'
+# else
+export EDITOR='code'
+# fi
+
+# Compilation flags
+# export ARCHFLAGS="-arch x86_64"
+
+# ssh
+export SSH_KEY_PATH="~/.ssh/rsa_id"
+
+# Set personal aliases, overriding those provided by oh-my-zsh libs,
+# plugins, and themes. Aliases can be placed here, though oh-my-zsh
+# users are encouraged to define aliases within the ZSH_CUSTOM folder.
+# For a full list of active aliases, run `alias`.
+#
+# Example aliases
+# alias zshconfig="mate ~/.zshrc"
+# alias ohmyzsh="mate ~/.oh-my-zsh"
+
+alias python=/usr/local/bin/python3
+alias pip=/usr/local/bin/pip3
+
+alias ll="ls -la"
+alias nis="npm install --save "
+alias mkcd='foo(){ mkdir -p "$1"; cd "$1" }; foo '
+alias ip="curl http://ipecho.net/plain; echo"
+alias t="tree -L"
+
+alias push="git push origin "
+alias gac="git add . && git commit -a -m "
+alias gc="git commit -a -m "
+alias gs="git status"
+alias ga="git add "
+alias gcl="git clone "
+alias grm="git rm"
+alias gall="git add -A"
+alias gf="git fetch --all --prune"
+alias gclean="git clean -fd"
+alias gm="git merge"
+alias gmv="git mv"
+alias gp="git push"
+alias gpush="git push"
+alias gpom="git push -u origin master"
+alias gl="git pull"
+alias gpull="git pull"
+alias gr="git remote"
+alias grv="git remote -v"
+alias gra="git remote add"
+
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
+# added by travis gem
+[ ! -s /Users/jacobherper/.travis/travis.sh ] || source /Users/jacobherper/.travis/travis.sh
+
+fpath=(~/.zsh $fpath)
+autoload -Uz compinit
+compinit -u
 
 # Path to your oh-my-zsh installation.
 export ZSH="/Users/jacobherper/.oh-my-zsh"
@@ -65,81 +141,21 @@ ZSH_THEME="agnoster"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(extract git gitfast git-extras github k node sudo vscode yarn npm z last-working-dir zsh-autosuggestions deno)
+plugins=(git k node vscode yarn npm z zsh-autosuggestions)
 
-source $ZSH/oh-my-zsh.sh
+if [[ $TERM_PROGRAM != "WarpTerminal" ]]; then
+##### WHAT YOU WANT TO DISABLE FOR WARP - BELOW
 
-# User configuration
+# POWERLEVEL10K
+# OH-MY-ZSH-THEMES
 
-export PATH="/usr/local/bin:$PATH"
-export PATH="$PATH:./node_modules/.bin"
-# You may need to manually set your language environment
-# export LANG=en_US.UTF-8
-
-# Preferred editor for local and remote sessions
-# if [[ -n $SSH_CONNECTION ]]; then
-#   export EDITOR='vim'
-# else
-export EDITOR='code'
-# fi
-
-# Compilation flags
-# export ARCHFLAGS="-arch x86_64"
-
-# ssh
-export SSH_KEY_PATH="~/.ssh/rsa_id"
-
-# Set personal aliases, overriding those provided by oh-my-zsh libs,
-# plugins, and themes. Aliases can be placed here, though oh-my-zsh
-# users are encouraged to define aliases within the ZSH_CUSTOM folder.
-# For a full list of active aliases, run `alias`.
-#
-# Example aliases
-# alias zshconfig="mate ~/.zshrc"
-# alias ohmyzsh="mate ~/.oh-my-zsh"
-
-alias python=/usr/local/bin/python3
-alias pip=/usr/local/bin/pip3
-
-alias develop="yarn develop"
-alias dev="yarn develop"
-alias build="yarn build"
-alias serve="yarn serve"
-
-alias c="clear"
-alias ll="ls -la"
-alias nis="npm install --save "
-alias hs="history | grep"
-alias mkcd='foo(){ mkdir -p "$1"; cd "$1" }; foo '
-alias ip="curl http://ipecho.net/plain; echo"
-alias t="tree -L"
-alias cleanup="clear && rm -rf ~/.config/yarn/link/@dennisdigital && printf \"📦 Yarn link cleared\n\n\" && rm -rf node_modules && printf \"🎯 node_modules cleared\n\n\" && rm -rf assets && printf \"🌄 assets cleared\n\n\" && yarn install && printf \"\n\n✅ Cleanup complete\n\""
-
-alias push="git push origin "
-alias g="git add . && git push -u origin master"
-alias gac="git add . && git commit -a -m "
-alias gc="git commit -a -m "
-alias gs="git status"
-alias ga="git add "
-alias gcl="git clone "
-alias grm="git rm"
-alias gall="git add -A"
-alias gf="git fetch --all --prune"
-alias gclean="git clean -fd"
-alias gm="git merge"
-alias gmv="git mv"
-alias gp="git push"
-alias gpush="git push"
-alias gpom="git push -u origin master"
-alias gl="git pull"
-alias gpull="git pull"
-alias gr="git remote"
-alias grv="git remote -v"
-alias gra="git remote add"
-
-export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+# OH-MY-ZSH-PLUGINS
+# FIG
+# BIND keys like:
+    # bindkey "^j" down-line-or-beginning-search
+# [[ -r "/usr/local/etc/profile.d/bash_completion.sh" ]] && 
+    # . "/usr/local/etc/profile.d/bash_completion.sh"
+    # eval "$(rbenv init -)
 
 # tabtab source for serverless package
 # uninstall by removing these lines or running `tabtab uninstall serverless`
@@ -151,9 +167,8 @@ export NVM_DIR="$HOME/.nvm"
 # uninstall by removing these lines or running `tabtab uninstall slss`
 [[ -f /Users/jacobherper/.config/yarn/global/node_modules/serverless/node_modules/tabtab/.completions/slss.zsh ]] && . /Users/jacobherper/.config/yarn/global/node_modules/serverless/node_modules/tabtab/.completions/slss.zsh
 
-# added by travis gem
-[ ! -s /Users/jacobherper/.travis/travis.sh ] || source /Users/jacobherper/.travis/travis.sh
 
-fpath=(~/.zsh $fpath)
-autoload -Uz compinit
-compinit -u
+##### WHAT YOU WANT TO DISABLE FOR WARP - ABOVE
+fi
+
+source $ZSH/oh-my-zsh.sh
