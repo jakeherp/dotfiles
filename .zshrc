@@ -5,6 +5,8 @@
 [[ -f "${HOME}/Library/Application Support/kiro-cli/shell/zshrc.pre.zsh" ]] \
   && builtin source "${HOME}/Library/Application Support/kiro-cli/shell/zshrc.pre.zsh"
 
+source "$(brew --prefix)/etc/profile.d/z.sh"
+
 # Local secrets
 [[ -f "${HOME}/.config/secrets/env.zsh" ]] && source "${HOME}/.config/secrets/env.zsh"
 
@@ -36,6 +38,21 @@ compinit -C
 setopt auto_cd
 setopt extended_glob
 setopt no_beep
+
+###############################################################################
+# DotCD
+###############################################################################
+
+function _dotcd() {
+	local -i depth=$(( ${#1} - 1 ))
+	local path
+	path="$(printf '../%.0s' {1..$depth})"
+	cd "${path%/}"
+}
+
+for dots in .. ... .... .....; do
+	function "$dots"() { _dotcd "$0"; }
+done
 
 ###############################################################################
 # Aliases
@@ -107,3 +124,6 @@ done
 
 # Kiro CLI post block. Keep at the bottom of this file.
 [[ -f "${HOME}/Library/Application Support/kiro-cli/shell/zshrc.post.zsh" ]] && builtin source "${HOME}/Library/Application Support/kiro-cli/shell/zshrc.post.zsh"
+
+# bun completions
+[ -s "/Users/jacobherper/.bun/_bun" ] && source "/Users/jacobherper/.bun/_bun"
