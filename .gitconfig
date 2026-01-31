@@ -1,13 +1,59 @@
 [user]
 	name = Jacob Herper
 	email = jacob@herper.uk
+
+[color]
+	ui = auto
+
 [core]
-	excludesfile = /Users/jacobherper/.gitignore_global
-[difftool "sourcetree"]
-	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
-	path = 
-[mergetool "sourcetree"]
-	cmd = /Applications/Sourcetree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
-	trustExitCode = true
-[commit]
-	template = /Users/jacobherper/.stCommitMsg
+	editor = cursor --wait
+	excludesfile = ~/.gitignore_global
+	pager = delta
+	autocrlf = false
+	safecrlf = true
+	filemode = true
+
+[alias]
+	s = status -sb
+	co = checkout
+	br = branch
+	ci = commit
+	lg = log --graph --pretty=format:'%C(auto)%h %d %s %C(blue)%cr %C(cyan)%an' --abbrev-commit
+	recent = for-each-ref --sort=-committerdate --count=10 --format='%(refname:short)' refs/heads/
+	prune-merged = "!f(){ git branch --merged | grep -E -v '(^\\*|main$|master$|develop$)' | while IFS= read -r b; do git branch -d \"${b# }\"; done; }; f"
+	undo = reset --soft HEAD~1
+	fix-author = commit --amend --reset-author
+
+[push]
+	default = current
+	autoSetupRemote = true
+
+[pull]
+	ff = only
+
+[merge]
+	conflictStyle = zdiff3
+
+[diff]
+	colorMoved = default
+	renames = true
+	algorithm = histogram
+
+[delta]
+	navigate = true
+	line-numbers = true
+	syntax-theme = Github
+	features = side-by-side
+	whitespace-error-style = 22 reverse
+
+[interactive]
+	diffFilter = delta --color-only
+
+[credential]
+	helper = osxkeychain
+
+[init]
+	defaultBranch = main
+
+[tag]
+	sort = version:refname

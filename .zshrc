@@ -1,174 +1,92 @@
-export GITHUB_TOKEN="d895a61aff95996a1a0a87077709dda6c044e249"
-export PATH="/Users/jacobherper/.deno/bin:$PATH"
-export PATH="/Users/jacobherper/flutter/bin:$PATH"
+# Kiro CLI pre block. Keep at the top of this file.
+[[ -f "${HOME}/Library/Application Support/kiro-cli/shell/zshrc.pre.zsh" ]] \
+  && builtin source "${HOME}/Library/Application Support/kiro-cli/shell/zshrc.pre.zsh"
 
-# If you come from bash you might have to change your $PATH.
-# export PATH=$HOME/bin:/usr/local/bin:$PATH
+export CI_JOB_TOKEN="XXXXXX"
+export EDITOR='cursor'
+export PATH="$HOME/.bun/bin:$HOME/.local/bin:$PATH"
 
-# User configuration
-export PATH="/usr/local/bin:$PATH"
-export PATH="$PATH:./node_modules/.bin"
-export START="/Users/jacobherper/Development"
-
-if [[ $PWD == $HOME ]]; then
-    cd $START
+# Only change directory if this is an interactive login shell
+if [[ -o login && $PWD == $HOME ]]; then
+	cd ~/Developer
 fi
 
-# You may need to manually set your language environment
-# export LANG=en_US.UTF-8
+###############################################################################
+# Prompt (Starship)
+###############################################################################
 
-# Preferred editor for local and remote sessions
-# if [[ -n $SSH_CONNECTION ]]; then
-#   export EDITOR='vim'
-# else
-export EDITOR='code'
-# fi
+# Assumes starship is installed via brew
+if command -v starship >/dev/null 2>&1; then
+	eval "$(starship init zsh)"
+fi
 
-# Compilation flags
-# export ARCHFLAGS="-arch x86_64"
+###############################################################################
+# Completion / shell behavior
+###############################################################################
 
-# ssh
-export SSH_KEY_PATH="~/.ssh/rsa_id"
+# Native zsh completion (no OMZ)
+autoload -Uz compinit
+compinit -C
 
-# Set personal aliases, overriding those provided by oh-my-zsh libs,
-# plugins, and themes. Aliases can be placed here, though oh-my-zsh
-# users are encouraged to define aliases within the ZSH_CUSTOM folder.
-# For a full list of active aliases, run `alias`.
-#
-# Example aliases
-# alias zshconfig="mate ~/.zshrc"
-# alias ohmyzsh="mate ~/.oh-my-zsh"
+setopt auto_cd
+setopt extended_glob
+setopt no_beep
 
-alias python=/usr/local/bin/python3
-alias pip=/usr/local/bin/pip3
+###############################################################################
+# Aliases
+###############################################################################
 
-alias ll="ls -la"
-alias nis="npm install --save "
-alias mkcd='foo(){ mkdir -p "$1"; cd "$1" }; foo '
+alias c="cursor"
 alias ip="curl http://ipecho.net/plain; echo"
+
+alias ls="lsd"
+alias ll="ls -la"
+alias la="ls -a"
+alias l="ls"
 alias t="tree -L"
 
-alias push="git push origin "
-alias gac="git add . && git commit -a -m "
-alias gc="git commit -a -m "
+alias mkcd='foo(){ mkdir -p "$1"; cd "$1"; }; foo'
+
 alias gs="git status"
-alias ga="git add "
-alias gcl="git clone "
-alias grm="git rm"
-alias gall="git add -A"
-alias gf="git fetch --all --prune"
-alias gclean="git clean -fd"
-alias gm="git merge"
-alias gmv="git mv"
-alias gp="git push"
-alias gpush="git push"
-alias gpom="git push -u origin master"
-alias gl="git pull"
-alias gpull="git pull"
-alias gr="git remote"
-alias grv="git remote -v"
-alias gra="git remote add"
+alias gac="git add . && git commit -m"
+
+###############################################################################
+# NVM lazy-loading (unchanged, OMZ-free)
+###############################################################################
 
 export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
-# added by travis gem
-[ ! -s /Users/jacobherper/.travis/travis.sh ] || source /Users/jacobherper/.travis/travis.sh
+load-nvm() {
+	# remove lazy-load stubs if they exist
+	for cmd in node npm npx nvm corepack yarn pnpm; do
+		if typeset -f "$cmd" >/dev/null 2>&1; then
+			unset -f "$cmd"
+		fi
+	done
 
-fpath=(~/.zsh $fpath)
-autoload -Uz compinit
-compinit -u
+	rehash
 
-# Path to your oh-my-zsh installation.
-export ZSH="/Users/jacobherper/.oh-my-zsh"
+	[ -s "/opt/homebrew/opt/nvm/nvm.sh" ] \
+		&& . "/opt/homebrew/opt/nvm/nvm.sh"
+	[ -s "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm" ] \
+		&& . "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm"
 
-# Set name of the theme to load --- if set to "random", it will
-# load a random theme each time oh-my-zsh is loaded, in which case,
-# to know which specific one was loaded, run: echo $RANDOM_THEME
-# See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
-ZSH_THEME="agnoster"
+	rehash
+}
 
-# Set list of themes to pick from when loading at random
-# Setting this variable when ZSH_THEME=random will cause zsh to load
-# a theme from this variable instead of looking in ~/.oh-my-zsh/themes/
-# If set to an empty array, this variable will have no effect.
-# ZSH_THEME_RANDOM_CANDIDATES=( "robbyrussell" "agnoster" )
+for cmd in node npm npx nvm corepack yarn pnpm; do
+	eval "$cmd() { load-nvm; $cmd \"\$@\"; }"
+done
 
-# Uncomment the following line to use case-sensitive completion.
-# CASE_SENSITIVE="true"
+###############################################################################
+# Atuin
+###############################################################################
 
-# Uncomment the following line to use hyphen-insensitive completion.
-# Case-sensitive completion must be off. _ and - will be interchangeable.
-# HYPHEN_INSENSITIVE="true"
+[[ -o interactive ]] && eval "$(atuin init zsh)"
 
-# Uncomment the following line to disable bi-weekly auto-update checks.
-# DISABLE_AUTO_UPDATE="true"
+###############################################################################
+# Kiro CLI post block. Keep at the bottom of this file.
+###############################################################################
 
-# Uncomment the following line to change how often to auto-update (in days).
-# export UPDATE_ZSH_DAYS=13
-
-# Uncomment the following line to disable colors in ls.
-# DISABLE_LS_COLORS="true"
-
-# Uncomment the following line to disable auto-setting terminal title.
-# DISABLE_AUTO_TITLE="true"
-
-# Uncomment the following line to enable command auto-correction.
-# ENABLE_CORRECTION="true"
-
-# Uncomment the following line to display red dots whilst waiting for completion.
-# COMPLETION_WAITING_DOTS="true"
-
-# Uncomment the following line if you want to disable marking untracked files
-# under VCS as dirty. This makes repository status check for large repositories
-# much, much faster.
-# DISABLE_UNTRACKED_FILES_DIRTY="true"
-
-# Uncomment the following line if you want to change the command execution time
-# stamp shown in the history command output.
-# You can set one of the optional three formats:
-# "mm/dd/yyyy"|"dd.mm.yyyy"|"yyyy-mm-dd"
-# or set a custom format using the strftime function format specifications,
-# see 'man strftime' for details.
-# HIST_STAMPS="mm/dd/yyyy"
-
-# Would you like to use another custom folder than $ZSH/custom?
-# ZSH_CUSTOM=/path/to/new-custom-folder
-
-# Which plugins would you like to load?
-# Standard plugins can be found in ~/.oh-my-zsh/plugins/*
-# Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
-# Example format: plugins=(rails git textmate ruby lighthouse)
-# Add wisely, as too many plugins slow down shell startup.
-plugins=(git k node vscode yarn npm z zsh-autosuggestions)
-
-if [[ $TERM_PROGRAM != "WarpTerminal" ]]; then
-##### WHAT YOU WANT TO DISABLE FOR WARP - BELOW
-
-# POWERLEVEL10K
-# OH-MY-ZSH-THEMES
-
-# OH-MY-ZSH-PLUGINS
-# FIG
-# BIND keys like:
-    # bindkey "^j" down-line-or-beginning-search
-# [[ -r "/usr/local/etc/profile.d/bash_completion.sh" ]] && 
-    # . "/usr/local/etc/profile.d/bash_completion.sh"
-    # eval "$(rbenv init -)
-
-# tabtab source for serverless package
-# uninstall by removing these lines or running `tabtab uninstall serverless`
-[[ -f /Users/jacobherper/.config/yarn/global/node_modules/serverless/node_modules/tabtab/.completions/serverless.zsh ]] && . /Users/jacobherper/.config/yarn/global/node_modules/serverless/node_modules/tabtab/.completions/serverless.zsh
-# tabtab source for sls package
-# uninstall by removing these lines or running `tabtab uninstall sls`
-[[ -f /Users/jacobherper/.config/yarn/global/node_modules/serverless/node_modules/tabtab/.completions/sls.zsh ]] && . /Users/jacobherper/.config/yarn/global/node_modules/serverless/node_modules/tabtab/.completions/sls.zsh
-# tabtab source for slss package
-# uninstall by removing these lines or running `tabtab uninstall slss`
-[[ -f /Users/jacobherper/.config/yarn/global/node_modules/serverless/node_modules/tabtab/.completions/slss.zsh ]] && . /Users/jacobherper/.config/yarn/global/node_modules/serverless/node_modules/tabtab/.completions/slss.zsh
-
-
-##### WHAT YOU WANT TO DISABLE FOR WARP - ABOVE
-fi
-
-source $ZSH/oh-my-zsh.sh
+[[ -f "${HOME}/Library/Application Support/kiro-cli/shell/zshrc.post.zsh" ]] \
+  && builtin source "${HOME}/Library/Application Support/kiro-cli/shell/zshrc.post.zsh"

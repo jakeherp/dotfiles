@@ -1,17 +1,21 @@
-# See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
-
 # dependencies
 /node_modules
 /.pnp
-.pnp.js
+.pnp.*
 
 # testing
 /coverage
 
 # next.js
-/.next/
+/.next
 
-# IDE files
+# builds
+/build
+/dist
+storybook-static/
+.storybook-out
+
+# IDE
 .idea/
 .vscode/*
 !.vscode/settings.json
@@ -19,24 +23,19 @@
 !.vscode/launch.json
 !.vscode/extensions.json
 *.code-workspace
-
-# Local History for Visual Studio Code
 .history/
-# production
-/build
-/dist
+*.iml
+.cursor
 
-# misc
-.DS_Store
-storybook-static/
-
-# debug
+# debug / logs
+*.log
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
 
 # local env files
-.env
 .env.local
 .env.development.local
 .env.test.local
@@ -46,6 +45,25 @@ yarn-error.log*
 cypress/videos
 cypress/screenshots
 
+# caches
+.cache
+.eslintcache
+.stylelintcache
+.parcel-cache
+.rspack-cache
+.turbo
+.nx
+.vite
+*.tsbuildinfo
+
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+.Spotlight-V100
+.Trashes
+.fseventsd
+
+# yalc
 yalc.lock
 .yalc
-.vscode
