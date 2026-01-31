@@ -272,8 +272,8 @@ defaults write NSGlobalDomain NSAutomaticQuoteSubstitutionEnabled -bool false
 defaults write NSGlobalDomain ApplePressAndHoldEnabled -bool false
 
 # Key repeat (tweak if too aggressive)
-defaults write NSGlobalDomain KeyRepeat -int 1
-defaults write NSGlobalDomain InitialKeyRepeat -int 10
+defaults write NSGlobalDomain KeyRepeat -int 2
+defaults write NSGlobalDomain InitialKeyRepeat -int 20
 
 # Trackpad: tap-to-click
 defaults write com.apple.driver.AppleBluetoothMultitouch.trackpad Clicking -bool true
@@ -306,8 +306,8 @@ defaults write com.apple.desktopservices DSDontWriteUSBStores -bool true
 # Dock
 defaults write com.apple.dock minimize-to-application -bool true
 defaults write com.apple.dock show-process-indicators -bool true
-defaults write com.apple.dock showhidden -bool true
-defaults write com.apple.dock static-only -bool true
+defaults write com.apple.dock showhidden -bool false
+defaults write com.apple.dock static-only -bool false
 
 # OPTIONAL (explicit opt-in): disable “downloaded app” quarantine warnings
 # defaults write com.apple.LaunchServices LSQuarantine -bool false
@@ -315,7 +315,7 @@ defaults write com.apple.dock static-only -bool true
 ###############################################################################
 # Restart affected apps
 ###############################################################################
-for app in "cfprefsd" "Dock" "Finder" "SystemUIServer"; do
+for app in "Dock" "Finder" "SystemUIServer"; do
 	killall "${app}" >/dev/null 2>&1 || true
 done
 
