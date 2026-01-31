@@ -5,7 +5,9 @@
 [[ -f "${HOME}/Library/Application Support/kiro-cli/shell/zshrc.pre.zsh" ]] \
   && builtin source "${HOME}/Library/Application Support/kiro-cli/shell/zshrc.pre.zsh"
 
-export CI_JOB_TOKEN="XXXXXX"
+# Local secrets
+[[ -f "${HOME}/.config/secrets/env.zsh" ]] && source "${HOME}/.config/secrets/env.zsh"
+
 export EDITOR='cursor'
 export PATH="$HOME/.bun/bin:$HOME/.local/bin:$PATH"
 
@@ -50,8 +52,16 @@ alias t="tree -L"
 
 alias mkcd='foo(){ mkdir -p "$1"; cd "$1"; }; foo'
 
-alias gs="git status"
 alias gac="git add . && git commit -m"
+alias gbr="git branch"
+alias gca="git commit -a -m"
+alias gcm="git commit -m"
+alias gco="git checkout"
+alias gd="git diff"
+alias gl="git pull"
+alias glo="git log --oneline"
+alias gp="git push"
+alias gs="git status"
 
 ###############################################################################
 # NVM lazy-loading (unchanged, OMZ-free)
