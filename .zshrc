@@ -13,6 +13,8 @@ source "$(brew --prefix)/etc/profile.d/z.sh"
 export EDITOR='cursor'
 export PATH="$HOME/.bun/bin:$HOME/.local/bin:$PATH"
 
+[[ "$TERM_PROGRAM" == "ghostty" ]] && export TERM=xterm-256color
+
 # Only change directory if this is an interactive login shell
 if [[ -o login && $PWD == $HOME ]]; then
 	cd ~/Developer

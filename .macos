@@ -53,7 +53,8 @@ brew install \
 	pgcli \
 	nvm \
 	mas \
-	ollama
+	ollama \
+	starship
 
 ###############################################################################
 # Node via nvm (modern LTS)
@@ -85,7 +86,7 @@ brew install --cask \
 	balenaetcher \
 	bartender \
 	cursor \
-  cursor-cli \
+	cursor-cli \
 	discord \
 	docker \
 	figma \
@@ -95,7 +96,7 @@ brew install --cask \
 	insomnia \
 	istat-menus \
 	karabiner-elements \
-  kiro-cli \
+	kiro-cli \
 	microsoft-excel \
 	microsoft-powerpoint \
 	microsoft-outlook \
@@ -106,7 +107,6 @@ brew install --cask \
 	pgadmin4 \
 	raycast \
 	signal \
-	slack \
 	tailscale-app \
 	vlc \
 	warp \
@@ -123,6 +123,39 @@ brew install \
 	pyenv \
 	go \
 	rust
+
+# Apple SF Fonts
+SF_FONTS=(
+	"https://devimages-cdn.apple.com/design/resources/download/SF-Pro.dmg"
+	"https://devimages-cdn.apple.com/design/resources/download/SF-Compact.dmg"
+	"https://devimages-cdn.apple.com/design/resources/download/SF-Mono.dmg"
+	"https://devimages-cdn.apple.com/design/resources/download/NY.dmg"
+)
+
+for url in "${SF_FONTS[@]}"; do
+	dmg_name="$(basename "${url}")"
+	dmg_path="/tmp/${dmg_name}"
+	mount_point="/tmp/sf_font_mount"
+
+	curl -L -o "${dmg_path}" "${url}"
+	hdiutil attach "${dmg_path}" -mountpoint "${mount_point}" -nobrowse -quiet
+	pkg_file="$(find "${mount_point}" -name '*.pkg' -maxdepth 1 | head -1)"
+	if [[ -n "${pkg_file}" ]]; then
+		pkgutil --check-signature "$pkg_file" || exit 1
+		sudo installer -pkg "${pkg_file}" -target /
+	fi
+	hdiutil detach "${mount_point}" -quiet
+	rm -f "${dmg_path}"
+done
+
+# Starship
+curl -L -o /tmp/GeistMono.zip "https://github.com/ryanoasis/nerd-fonts/releases/download/v3.4.0/GeistMono.zip"
+unzip -o /tmp/GeistMono.zip -d /tmp/GeistMono
+cp /tmp/GeistMono/*.otf "${HOME}/Library/Fonts/" 2>/dev/null || cp /tmp/GeistMono/*.ttf "${HOME}/Library/Fonts/" 2>/dev/null
+rm -rf /tmp/GeistMono /tmp/GeistMono.zip
+
+mkdir -p "${HOME}/.config" && touch "${HOME}/.config/starship.toml"
+starship preset nerd-font-symbols -o "${HOME}/.config/starship.toml"
 
 # pyenv bootstrap (zsh)
 if ! grep -q 'pyenv init' "${HOME}/.zprofile" 2>/dev/null; then
@@ -152,7 +185,7 @@ go version
 rustc --version
 cargo --version
 
-# Kiro CLI autocomplete is enabled by default; enforce it (safe to re-run)
+kiro-cli login || echo "Kiro CLI login skipped; run 'kiro-cli login' manually later."
 kiro-cli settings autocomplete.disable false || true
 kiro-cli inline enable || true
 
@@ -252,6 +285,22 @@ else
 fi
 
 ###############################################################################
+# Touch ID for sudo
+###############################################################################
+
+# sudo_local is the preferred file (survives macOS updates)
+if [[ ! -f /etc/pam.d/sudo_local ]] || ! grep -q 'pam_tid.so' /etc/pam.d/sudo_local; then
+	sudo bash -c 'echo "auth sufficient pam_tid.so" >> /etc/pam.d/sudo_local'
+fi
+
+# Also patch /etc/pam.d/sudo as a fallback
+if ! grep -q 'pam_tid.so' /etc/pam.d/sudo; then
+	sudo sed -i '' '1a\
+auth       sufficient     pam_tid.so
+' /etc/pam.d/sudo
+fi
+
+###############################################################################
 # macOS defaults (kept to stuff that still tends to stick)
 ###############################################################################
 
@@ -308,6 +357,7 @@ defaults write com.apple.dock minimize-to-application -bool true
 defaults write com.apple.dock show-process-indicators -bool true
 defaults write com.apple.dock showhidden -bool false
 defaults write com.apple.dock static-only -bool false
+defaults write com.apple.dock show-recents -bool false
 
 # OPTIONAL (explicit opt-in): disable “downloaded app” quarantine warnings
 # defaults write com.apple.LaunchServices LSQuarantine -bool false
